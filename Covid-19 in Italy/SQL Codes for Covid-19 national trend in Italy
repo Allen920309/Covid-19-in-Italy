@@ -1,0 +1,31 @@
+SELECT 
+    date,
+    total_confirmed_cases,
+    total_current_confirmed_cases,
+    recovered,
+    deaths,
+    daily_deaths,
+    daily_recovered,
+    CONCAT(ROUND((daily_deaths/total_current_confirmed_cases)*100,2),'%') AS death_rate,
+    CONCAT(ROUND((daily_recovered/total_current_confirmed_cases)*100,2),'%') AS recovery_rate
+FROM 
+    (
+    SELECT 
+        DATE(date) AS date,
+        total_current_confirmed_cases,
+        total_confirmed_cases,
+        recovered,
+        deaths,
+        deaths - LAG(deaths)
+        OVER(ORDER BY date) AS daily_deaths,
+        recovered - LAG(recovered)
+        OVER(ORDER BY date) AS daily_recovered
+    FROM 
+    bigquery-public-data.covid19_italy.national_trends
+    )
+WHERE 
+    daily_deaths >= 0
+    AND daily_recovered >= 0
+
+ORDER BY 
+    date
