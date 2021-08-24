@@ -1,10 +1,14 @@
 # Covid-19 national trend of Italy 
 
+The aim of the project is to use SQL Bigquery clean and process the data from public datasets to research the Covid-19 national trend of Italy.
+
 The visulization of Italian Covid-19 national trend can be found on [Tableau](https://public.tableau.com/app/profile/mo.tao/viz/CovidinItaly/Covid-19inItalyfrom022020to082021_1).
 
-## Available Scripts
+## Technologies used:
 
-In the project directory, you can run:
+* SQL Bigquery
+* Tableau
+* Excel
 
 ### `yarn start`
 
