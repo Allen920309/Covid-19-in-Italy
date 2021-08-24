@@ -1,6 +1,6 @@
-# Getting Started with 
+# Covid-19 national trend of Italy 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The visulization of Italian Covid-19 national trend can be found on [Tableau](https://public.tableau.com/app/profile/mo.tao/viz/CovidinItaly/Covid-19inItalyfrom022020to082021_1).
 
 ## Available Scripts
 
